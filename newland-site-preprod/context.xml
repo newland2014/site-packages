@@ -1,3 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 	<Context path="/" allowLinking="true">
+  	<Resource name="newland" 
+		auth="Container" 
+		type="javax.sql.DataSource"
+		maxActive="100"
+		maxIdle="30"
+		maxWait="10000"
+		username="newland"
+		password="newland"
+		driverClassName="com.mysql.jdbc.Driver"
+		url="jdbc:mysql://localhost:3306/newland_site_preprod"/>
 </Context>
