@@ -17,6 +17,7 @@ backup=(etc/newland-site/server.xml
 options=()
 
 source=(site-${pkgver}.war
+        https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.30.tar.gz
         web.xml
         server.xml
         context.xml
@@ -60,10 +61,8 @@ package() {
   install -Dm644 ${srcdir}/systemd_tmpfiles.d_newland.conf \
                  ${pkgdir}/usr/lib/tmpfiles.d/${pkgname}.conf
 
+  install -dm775 ${pkgdir}/usr/share/${pkgname}/lib
+  install -Dm775 -g71 -o71 ${srcdir}/mysql-connector-java-5.1.30/mysql-connector-java-5.1.30-bin.jar ${pkgdir}/usr/share/${pkgname}/lib
 }
 
 # vim:set ts=2 sw=2 et:
-
-
-
-
